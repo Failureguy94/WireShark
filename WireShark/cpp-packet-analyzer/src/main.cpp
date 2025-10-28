@@ -1,5 +1,9 @@
 #include <iostream>
-#include <thread>
+#ifdef _WIN32
+#include <windows.h>
+#else
+#include <unistd.h>
+#endif
 #include <chrono>
 #include "common/packet.h"
 #include "capture/pcap_capture.h"
@@ -20,23 +24,27 @@ int main() {
     if (!sniffer.startCapture()) {
         std::cerr << "Failed to start packet capture!" << std::endl;
         return 1;
-    }
-
-    std::cout << "Capturing packets... (Press Ctrl+C to stop)\n" << std::endl;
-
-    // Capture packets for demo (10 packets)
-    for (int i = 0; i < 10; i++) {
-        Packet packet = sniffer.getNextPacket();
-        
-        if (packet.isValid()) {
-            analyzer.addPacket(packet);
+        // Capture packets for demo (10 packets)
+        for (int i = 0; i < 10; i++) {
+            Packet packet = sniffer.getNextPacket();
             
-            std::cout << "[" << i+1 << "] "
-                      << packet.timestamp << " | "
-                      << packet.source << " -> "
-                      << packet.destination << " | "
-                      << packet.protocol << " | "
-                      << packet.length << " bytes" << std::endl;
+            if (packet.isValid()) {
+                analyzer.addPacket(packet);
+                
+                std::cout << "[" << i+1 << "] "
+                          << packet.timestamp << " | "
+                          << packet.source << " -> "
+                          << packet.destination << " | "
+                          << packet.protocol << " | "
+                          << packet.length << " bytes" << std::endl;
+            }
+            
+            // Simulate delay
+    #ifdef _WIN32
+            Sleep(500); // milliseconds
+    #else
+            usleep(500000); // microseconds
+    #endif
         }
         
         // Simulate delay
