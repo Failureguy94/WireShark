@@ -17,7 +17,7 @@
 
 ## 📸 Application Preview
 
-![Mini WireShark Dashboard](docs/screenshot.png)
+![Mini WireShark Dashboard](assests/WireShark.jpeg)
 
 *Real-time packet capture showing live network traffic analysis with protocol statistics*
 
@@ -99,46 +99,6 @@ However, tools like Wireshark can be overwhelming for beginners and resource-hea
 ```
 
 ---
-
-## 📁 Project Structure
-
-```
-WireShark/
-├── 📄 Readme.md                 # This file
-├── 📄 setup.sh                  # Automated setup script
-├── 📁 docs/                     # Documentation & screenshots
-│   └── screenshot.png
-├── 📁 frontend/                 # React Frontend Application
-│   ├── src/
-│   │   ├── components/          # UI Components
-│   │   │   ├── Dashboard.tsx    # Main control panel
-│   │   │   ├── PacketList.tsx   # Packet table view
-│   │   │   ├── Header.tsx       # Top navigation
-│   │   │   └── Sidebar.tsx      # Side navigation
-│   │   ├── services/            # API communication
-│   │   └── App.tsx              # Application entry
-│   ├── package.json
-│   └── tailwind.config.js
-└── 📁 WireShark/
-    └── cpp-packet-analyzer/     # C++ Backend
-        ├── src/
-        │   ├── main.cpp         # HTTP server & entry point
-        │   ├── capture/         # libpcap integration
-        │   ├── decode/          # Protocol decoders
-        │   ├── analysis/        # Traffic analysis
-        │   └── utils/           # Logging utilities
-        ├── include/             # Header files
-        ├── tests/               # Unit tests
-        └── CMakeLists.txt       # Build configuration
-```
-
-## Quick Start
-
-### Automatic Setup (Recommended)
-```bash
-# Clone and setup everything
-./setup.sh
-```
 
 ### Manual Setup
 
