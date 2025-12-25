@@ -5,6 +5,17 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Root route
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'Mini Wireshark API Server',
+    endpoints: [
+      'GET /api/packets - Get captured packets',
+      'GET /api/stats - Get packet statistics'
+    ]
+  });
+});
+
 // Mock packet data
 const generateMockPackets = () => {
   const packets = [];
