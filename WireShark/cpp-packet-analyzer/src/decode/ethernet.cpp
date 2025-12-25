@@ -1,4 +1,4 @@
-#include "ethernet.h"
+#include "decode/ethernet.h"
 #include <iostream>
 #include <cstring>
 

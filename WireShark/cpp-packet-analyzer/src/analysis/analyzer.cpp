@@ -56,6 +56,10 @@ Statistics Analyzer::generateStatistics() const {
     return stats;
 }
 
+std::vector<Packet> Analyzer::getPackets() const {
+    return packets;
+}
+
 void Analyzer::reset() {
     packets.clear();
     stats = Statistics();

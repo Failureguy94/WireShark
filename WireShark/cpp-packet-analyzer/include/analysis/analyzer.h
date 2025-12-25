@@ -19,6 +19,7 @@ public:
     int getPacketCount() const;
     bool hasErrors() const;
     Statistics generateStatistics() const;
+    std::vector<Packet> getPackets() const;
     void reset();
     void displayPackets() const;
 };

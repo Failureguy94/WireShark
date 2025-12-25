@@ -1,0 +1,24 @@
+{
+  "name": "wireshark",
+  "version": "1.0.0",
+  "description": "## Overview A comprehensive network packet analyzer built with C++ backend and React frontend, inspired by Wireshark. This project captures, analyzes, and visualizes network packets in real-time through a modern web interface.",
+  "main": "mock-api-server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Failureguy94/WireShark.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Failureguy94/WireShark/issues"
+  },
+  "homepage": "https://github.com/Failureguy94/WireShark#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.2.1"
+  }
+}

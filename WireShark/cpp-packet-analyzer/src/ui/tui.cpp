@@ -1,4 +1,4 @@
-#include "tui.h"
+#include "ui/tui.h"
 #include <iostream>
 
 void TUI::displayPacketInfo(const Packet& packet) {
